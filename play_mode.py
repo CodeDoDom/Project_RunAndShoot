@@ -2,6 +2,8 @@ from pico2d import *
 import game_framework
 
 import game_world
+from runner import Runner
+
 
 def handle_events():
     events = get_events()
@@ -10,12 +12,15 @@ def handle_events():
             game_framework.quit()
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.quit()
-        else:
-            pass
 
 def init():
+    global runner
+
     running = True
-    pass
+
+    runner = Runner()
+    game_world.add_object(runner, 0)
+
 
 
 def finish():

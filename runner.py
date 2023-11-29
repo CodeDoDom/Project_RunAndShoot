@@ -1,12 +1,13 @@
-from pico2d import load_image
-
+from pico2d import *
 
 class Runner:
     def __init__(self):
-        self.x, self.y = 450, 300
-        self.frame = 0
-        self.action = 3
-        self.image = load_image('Boy_animation.png')
+        self.image = load_image('running.png')
+
+    def update(self):
+        pass
 
     def draw(self):
-        self.draw(self.x, self.y)
+        self.image.draw(400, 300)
+
+
